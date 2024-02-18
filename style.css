@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter;
+  font-size: 1.2rem;
+  color: white;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+}
+
+main h1 {
+  font-size: 6rem;
+  user-select: none;
+  text-align: center;
+  color: black;
+  z-index: 1;
+  letter-spacing: -9px;
+  word-spacing: 42px;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+}
+
+#timer {
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+#bgimg {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#stop,
+#ohfuck {
+  font-size: 6rem;
+}
+
+#stop {
+  color: rgb(57, 54, 53);
+}
+
+#ohfuck {
+  color: red;
+  cursor: pointer;
+}
+
+#timercont {
+  height: auto;
+  width: 45%;
+  min-width: 430px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  margin-left: auto;
+  margin-right: auto;
+  user-select: none;
+  padding: 10px 12px;
+}
+
+button {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  min-height: 75px;
+  min-width: 140px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  transition: outline 0.3s;
+  transition: backdrop-filter 0.5s;
+}
+
+button:hover {
+  outline: solid white 3px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+#playpause {
+  min-height: 100px;
+  min-width: 102px;
+  border-radius: 50px;
+}
+
+#playpause:hover i {
+  font-size: 3.5rem;
+  color: rgb(249, 21, 21);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+}
+
+#playpause:active i {
+  color: rgb(211, 205, 46);
+  #lap {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 0, 0, 0.1),
+      rgba(255, 0, 0, 0)
+    );
+  }
+  transition: none;
+}
+
+#lapbtn:hover i {
+  font-size: 3.5rem;
+  color: rgb(86, 192, 141);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+}
+
+/* #lapbtn:focus i {
+  font-size: 3.5rem;
+  color: rgb(169, 0, 0);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+} */
+
+#lapbtn:active i {
+  color: black;
+  #lap {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 0, 0, 0.1),
+      rgba(255, 0, 0, 0)
+    );
+  }
+  transition: none;
+}
+
+#reset:hover i {
+  font-size: 3.5rem;
+  color: rgb(98, 0, 255);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+}
+
+/* #reset:focus i {
+  font-size: 3.5rem;
+  color: rgb(98, 0, 255);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+} */
+
+#reset:active i {
+  color: black;
+  #lapbtn {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 0, 0, 0.1),
+      rgba(255, 0, 0, 0)
+    );
+  }
+  transition: none;
+}
+
+button i {
+  font-size: 3rem;
+  transition-duration: 0.4s;
+}
+
+.controls {
+  margin-top: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+}
+
+#timer {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+  cursor: auto;
+  font-size: 2.5rem;
+}
+
+#timer p {
+  width: 120px;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+#lap {
+  margin-top: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+}
+
+#lap h2 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+#lap ul {
+  font-size: 1.3rem;
+  font-weight: 200;
+}
+
+@media screen and (max-width: 1300px) {
+  main h1 {
+    font-size: 5.6rem;
+  }
+  #stop,
+  #ohfuck {
+    font-size: 5.6rem;
+  }
+
+  #timer p {
+    text-align: center;
+    font-size: 3.6rem;
+  }
+
+  #lap h2 {
+    font-size: 1.4rem;
+  }
+
+  #lap ul {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 863px) and (max-width: 1024px) {
+  main h1 {
+    font-size: 4.8rem;
+  }
+  #stop,
+  #ohfuck {
+    font-size: 4.8rem;
+  }
+
+  #timer p {
+    text-align: center;
+    font-size: 3.4rem;
+  }
+
+  #lap h2 {
+    font-size: 1.3rem;
+  }
+
+  #lap ul {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 863px) {
+  main h1 {
+    font-size: 4.4rem;
+    letter-spacing: -7px;
+  }
+  #stop,
+  #ohfuck {
+    font-size: 4.4rem;
+  }
+
+  #timer p {
+    text-align: center;
+    font-size: 3.3rem;
+  }
+
+  #lap h2 {
+    font-size: 1.2rem;
+  }
+
+  #lap ul {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 650px) and (max-width: 768px) {
+  main h1 {
+    font-size: 4.1rem;
+    letter-spacing: -6px;
+  }
+  #stop,
+  #ohfuck {
+    font-size: 4.1rem;
+  }
+
+  #timer p {
+    text-align: center;
+    font-size: 3.1rem;
+  }
+
+  #lap h2 {
+    font-size: 1rem;
+  }
+
+  #lap ul {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 650px) {
+  main h1 {
+    font-size: 3rem;
+    letter-spacing: -5px;
+  }
+  #stop,
+  #ohfuck {
+    font-size: 3rem;
+  }
+
+  #timer p {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  #lap h2 {
+    font-size: 0.7rem;
+  }
+
+  #lap ul {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (min-width: 310px) and (max-width: 425px) {
+  main h1 {
+    font-size: 3rem;
+    letter-spacing: -5px;
+  }
+  #stop,
+  #ohfuck {
+    font-size: 3rem;
+  }
+
+  #timer p {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  #lap h2 {
+    font-size: 0.7rem;
+  }
+
+  #lap ul {
+    font-size: 0.7rem;
+  }
+}
+
+
+
+/* change the src of image with portrait */
+
