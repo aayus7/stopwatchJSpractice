@@ -33,9 +33,20 @@ playBtn.addEventListener("click", function () {
     iPlay.classList.remove("ri-play-circle-fill");
     iPlay.classList.add("ri-pause-circle-fill");
     startTimer();
+    timerLabel.style.backgroundColor = "rgba(0, 0, 0, 0.81)";
+    timerLabel.style.color = "#fff";
+    document.getElementById("minutes").style.color = "#fff";
+    document.getElementById("seconds").style.color = "#fff";
+    document.getElementById("milliseconds").style.color = "#fff";
   } else {
     iPlay.classList.remove("ri-pause-circle-fill");
     iPlay.classList.add("ri-play-circle-fill");
+    timerLabel.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+    timerLabel.style.color = "rgba(255, 0, 0, 0.6)";
+    document.getElementById("minutes").style.color = "rgba(255, 0, 0, 0.6)";
+    document.getElementById("seconds").style.color = "rgba(255, 0, 0, 0.6)";
+    document.getElementById("milliseconds").style.color =
+      "rgba(255, 0, 0, 0.6)";
     pauseTimer();
   }
 });
@@ -83,6 +94,11 @@ const pauseTimer = function () {
 const stopTimer = function () {
   addToLapList();
   resetTimer();
+  timerLabel.style.backgroundColor = "rgba(0, 0, 0, 0.81)";
+  timerLabel.style.color = "#fff";
+  document.getElementById("minutes").style.color = "#fff";
+  document.getElementById("seconds").style.color = "#fff";
+  document.getElementById("milliseconds").style.color = "#fff";
 };
 
 const addToLapList = function () {
@@ -112,4 +128,9 @@ const resetTimer = function () {
     iPlay.classList.remove("ri-pause-circle-fill");
     iPlay.classList.add("ri-play-circle-fill");
   }
+  timerLabel.style.backgroundColor = "rgba(0, 0, 0, 0.81)";
+  timerLabel.style.color = "#fff";
+  document.getElementById("minutes").style.color = "#fff";
+  document.getElementById("seconds").style.color = "#fff";
+  document.getElementById("milliseconds").style.color = "#fff";
 };
